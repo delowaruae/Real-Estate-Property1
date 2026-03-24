@@ -1,6 +1,6 @@
 
 
-    * { margin:0;   padding: 0;  box-sizing: border-box; font-family: Tahoma, Geneva, Verdana, sans-serif; }		
+    * { margin:0;   padding: 0;  box-sizing: border-box; }		
 
 body{
     margin: 0 auto;
@@ -13,13 +13,8 @@ body{
 
 
  /*-- 1 Parent-div Main or Head section starts --*/
- .parent-div { background: #f4f4f4; margin: 0; }
-.main-head{ background: linear-gradient(to top, rgba(0,0,0,0.3)50%,rgba(0,0,0,0.3)50%), url(bg.png);
-    background-position:center;  position: relative;
-      overflow: hidden;
-    background-size: cover;
-	fill: cover; 	border-radius:10px;  height:80vh; }
-     
+.parent-div { background: #f4f4f4; margin: 0; }
+.main-head{ background: linear-gradient( to top, rgba(0, 0, 0, 0.4) 50%, rgba(0, 0, 0, 0.4) 50% ), url("bg.png") no-repeat center center; background-size: cover; position: relative; height: 100vh; overflow: hidden; background-size: cover; fill: cover; 	border-radius:10px;  height:100vh; }    
 
 
 .navbar{display:flex; justify-content:space-between;  margin: 10px; }
@@ -60,10 +55,19 @@ ul li a:hover{ color: #0e0bc9;}
    .status-buttons button { padding: 10px 20px; border-radius:10px; font-size:15px; cursor: pointer; color: white; font-weight:bold;} 
    .status-buttons .head-line { background-color:transparent;} 
    .status-buttons .head-line:hover {background-color:tomato; transition: transform 0.3s ease; transform: scale(1.02);} 
-   .filters {display:flex;  flex-wrap:wrap; width:100%;  background:red; border:5px solid green; justify-content: center;} 
-   .filters:hover {transition: transform 0.3s ease;transform: scale(1.02);} 
-   .filters select,.filters input { padding: 10px 15px; border-radius:10px; outline: none; font-size: 15px; width:auto;} 
-   .filters .search-btn { background-color: #f15a29; color: white; border: none; cursor: pointer; font-weight: bold; padding: 10px 20px; border-radius: 10px; }
+  
+  /*------folters duplicate-----*/
+ 
+   
+   .filters {display:flex; flex-wrap:wrap; width:100%; background-color: rgba(255, 255, 255, 0.2); margin-top: 10px; gap: 10px; justify-content: center; }   
+   .filters .search-btn:hover {background: #c94a21; transition: transform 0.3s ease;transform: scale(1.02)}
+  
+  .filters select,.filters input { padding: 10px 15px; border-radius: 10px; outline: none; font-size: 15px;background: rgba(255, 255, 255, 0.4); border: none; }
+   
+   
+   
+   .filters .search-btn { background-color: #f15a29; color: white; border: none; cursor: pointer; font-weight: bold; padding: 10px 20px; border-radius: 10px; transition: 0.3s ease; }
+   
  /*-- 1 Parent-div Main or Head section ends --*/		
 
 
@@ -75,7 +79,7 @@ ul li a:hover{ color: #0e0bc9;}
     --radius: 10px;
     --item-h: 180px; }
 	
-.marquee-wrap h1{ margin-top:80px; margin-bottom:0px; background:yellow; color: #000; font-size: 1.5rem; width:280px; padding:10px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);} 
+.marquee-wrap h1{ margin-top:20px; margin-bottom:0px; background:yellow; color: #000; font-size: 1.5rem; width:250px; padding:10px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.3);} 
 .marquee-wrap {overflow: hidden; position: relative; width:100%;  } 
 .marquee { display: flex; gap: var(--gap); margin:0px; padding: 0; width: max-content;
  /* ensures smooth flow */ 
@@ -116,9 +120,8 @@ ul li a:hover{ color: #0e0bc9;}
 .city-div h1 {
   font-size: 1.5rem;
   text-align: center;
-  margin: 50px 0 20px;
-  color: #333;
-}
+  margin: 30px 0 20px;
+  color: #333;}
 
 /* Carousel container */
 .carousel-container {
@@ -141,7 +144,7 @@ ul li a:hover{ color: #0e0bc9;}
   position: relative;
   border-radius: 8px;
   overflow: hidden;
-  margin:2px;
+  margin:10px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -203,8 +206,9 @@ ul li a:hover{ color: #0e0bc9;}
 @media (max-width: 991px) {
   .card { min-width: 25%; } /* Tablet shows 4 as desktop */
 }
-@media (max-width: 768px) {
-  .card {min-width: 45%;} /* Mobile: 2 per slide */
+
+@media (max-width: 768px) { 
+.card {min-width: 45%;} /* Mobile: 2 per slide */
   .card img { height: 300px; }
   .city { font-size: 16px; }
   .more-details { font-size: 12px; padding: 5px 10px; }
@@ -334,22 +338,7 @@ ul li a:hover{ color: #0e0bc9;}
   .news-excerpt { color: #5d6d7e; line-height: 1.5; }
    
    
-    /* Rent page styles */
-.filters { background: white; padding: 20px; border-radius: 8px; margin-bottom: 30px; box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05); } 
-.filter-group { margin-bottom: 15px; } 
-.filter-group label { display: block; margin-bottom: 5px; font-weight: 600; color: #2c3e50; } 
-.filter-group select, .filter-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; } 
-.filter-actions { display: flex; justify-content: flex-end; gap: 10px; } 
-.filter-btn { padding: 10px 20px; background-color: #e74c3c; color: white; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s ease; } 
-.filter-btn:hover { background-color: #c0392b; } 
-.reset-btn { padding: 10px 20px; background-color: #ecf0f1; color: #34495e; border: none; border-radius: 5px; cursor: pointer; transition: all 0.3s ease; } 
-.reset-btn:hover { background-color: #d5dbdb;}	
-/* 5  Explore more zone ends*/	
-	
-
-
-
-			
+/* 5  Explore more zone ends*/			
 			
 			
 /*--------6 Your  Popular real estate zone search starts */	
@@ -471,10 +460,10 @@ ul li a:hover{ color: #0e0bc9;}
 	.slide { flex: 0 0 33.333%; box-sizing: border-box; padding: 15px;    }
 		
     /* Card Styling */
-    .card { background: snow; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: left; display: flex; flex-direction: column; height: 100%; justify-content: space-between; position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease; } 
-	.card p{ color:black; } 
-	.card::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(to right, #ff4d00, #ff9900); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; } 
-	.card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+    .testimonial-card { background: snow; border-radius: 10px; padding: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); text-align: left; display: flex; flex-direction: column; height: 100%; justify-content: space-between; position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease; } 
+	.testimonial-card p{ color:black; } 
+	.testimonial-card::after { content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(to right, #ff4d00, #ff9900); border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; } 
+	.testimonial-card:hover { transform: translateY(-8px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
 	
 	
     /* Customer Info */
@@ -492,6 +481,8 @@ ul li a:hover{ color: #0e0bc9;}
     @media(max-width: 600px) {
         .slide { flex: 0 0 100%; }  }
 /* ------ 9 testmonial Customer ends --------- */ 
+
+
 
 
 /* 10 Millions of Offering Supplers for your Business starts */	
